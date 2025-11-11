@@ -14,9 +14,10 @@ body{
             border:1px solid;
         }
         .container--table{
-            height:400px;
+            height:725px;
             margin-top:20px;
             border:1px solid;
+            overflow-y: auto;
         }
     }
 }
