@@ -3,14 +3,7 @@
 import { TrendingUp } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import {
   ChartContainer,
   ChartTooltip,
@@ -43,13 +36,11 @@ export interface ChartAreaGradientProps {
 export function ChartAreaGradient({
   data,
   config,
-  title = "Area Chart - Gradient",
-  description = "Showing data over time",
   xAxisKey,
   dataKeys,
   showTrend = true,
-  trendValue = "5.2%",
-  trendText = "this month"
+  trendValue = '5.2%',
+  trendText = 'this month',
 }: ChartAreaGradientProps) {
   return (
     <Card className="w-[500px]">
