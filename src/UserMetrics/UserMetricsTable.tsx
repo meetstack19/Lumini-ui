@@ -24,10 +24,8 @@ const UserMetricsTable = () => {
     return <div>Loading...</div>;
   }
     
-    console.log(data);
-
   return (
-    <div className="container mx-auto p-5">
+    <div className="container p-5">
       <DataTable columns={userMetricColumns} data={data} />
     </div>
   );

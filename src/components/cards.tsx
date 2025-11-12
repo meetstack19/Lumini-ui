@@ -26,7 +26,7 @@ export const ChartCard = (): React.ReactElement => {
                     <text x="18" y="20.35" className="percentage">45%</text>
                 </svg>
                 <div className="order-info">
-                    <span className="total-order">Total Users</span>
+                    <span className="total-order">No. of Users</span>
                     <span className="order-count">90</span>
                 </div>
             </div>
@@ -50,7 +50,7 @@ export const ChartCard = (): React.ReactElement => {
                     <text x="18" y="20.35" className="percentage">37%</text>
                 </svg>
                 <div className="order-info">
-                    <span className="total-order">Total Users</span>
+                    <span className="total-order">No. of Users</span>
                     <span className="order-count">74</span>
                 </div>
             </div>
@@ -74,7 +74,7 @@ export const ChartCard = (): React.ReactElement => {
                     <text x="18" y="20.35" className="percentage">18%</text>
                 </svg>
                 <div className="order-info">
-                    <span className="total-order">Total Users</span>
+                    <span className="total-order">No. of Users</span>
                     <span className="order-count">36</span>
                 </div>
             </div>

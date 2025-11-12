@@ -62,9 +62,6 @@ export const UserMetricRadialChart = () => {
     }
 
     const chartConfig = {
-        value: {
-            label: "Total Users",
-        },
         active: {
             label: "Active Users",
             color: "var(--chart-1)",

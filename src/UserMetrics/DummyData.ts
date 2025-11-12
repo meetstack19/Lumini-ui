@@ -13,7 +13,5 @@ export const dummyData = (): UserMetric[] => {
         });
     }
 
-    console.log('dummyData ', data);
-
     return data;
 };
