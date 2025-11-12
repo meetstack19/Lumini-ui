@@ -18,9 +18,10 @@ import { Button } from '@/components/ui/button';
 
 export type UserMetric = {
   uid: number;
-  userName: string;
+  email: string;
   mostVisitedTopic: string;
-  lastUserAction: string;
+  moderatelyVisitedTopic: string;
+  leastVisitedTopic: string;
 };
 
 export const userMetricColumns: ColumnDef<UserMetric>[] = [
@@ -50,37 +51,40 @@ export const userMetricColumns: ColumnDef<UserMetric>[] = [
   //   enableSorting: false,
   //   enableHiding: false,
   // },
+  // {
+  //   accessorKey: 'uid',
+  //   header: ({ column }) => (
+  //     <div className="text-center">
+  //     <Button
+  //       variant="ghost"
+  //       onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+  //     >
+  //       UID
+  //       <ArrowUpDown className="ml-2 h-4 w-4" />
+  //     </Button>
+  //     </div>
+  //   ),
+  //   cell: ({ row }) => (
+  //     <div className="text-center font-medium">{row.getValue('uid')}</div>
+  //   ),
+  // },
   {
-    accessorKey: 'uid',
-    header: ({ column }) => (
-      <div className="text-center">
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-      >
-        UID
-        <ArrowUpDown className="ml-2 h-4 w-4" />
-      </Button>
-      </div>
-    ),
-    cell: ({ row }) => (
-      <div className="text-center font-medium">{row.getValue('uid')}</div>
-    ),
-  },
-  {
-    accessorKey: 'userName',
+    accessorKey: 'email',
     header: ({ column }) => (
       <div className="text-center"><Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
       >
-        User Name
+        Email
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button></div>
     ),
-    cell: ({ row }) => (
-      <div className="text-center font-medium">{row.getValue('userName')}</div>
-    ),
+    cell: ({ row }) => {
+      console.log(row.original);
+      return (
+        <div className="text-center font-medium">{row.getValue('email')}</div>
+      )
+    },
   },
   {
     accessorKey: 'mostVisitedTopic',
@@ -100,23 +104,40 @@ export const userMetricColumns: ColumnDef<UserMetric>[] = [
     ),
   },
   {
-    accessorKey: 'lastUserAction',
+    accessorKey: 'moderatelyVisitedTopic',
     header: ({ column }) => (
       <div className="text-center"><Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
       >
-        Last User Action
+        Moderately Visited Topic
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button></div>
     ),
     cell: ({ row }) => (
       <div className="text-center font-medium">
-        {row.getValue('lastUserAction')}
+        {row.getValue('moderatelyVisitedTopic')}
       </div>
     ),
   },
-  // {
+  {
+    accessorKey: 'leastVisitedTopic',
+    header: ({ column }) => (
+      <div className="text-center"><Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+      >
+        Least Visited Topic
+        <ArrowUpDown className="ml-2 h-4 w-4" />
+      </Button></div>
+    ),
+    cell: ({ row }) => (
+      <div className="text-center font-medium">
+        {row.getValue('leastVisitedTopic')}
+      </div>
+    ),
+  },
+    // {
   //   header: () => <div className="text-center">Actions</div>,
   //   id: 'actions',
   //   cell: ({ row }) => {
