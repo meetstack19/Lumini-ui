@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export const ChartCard = (): React.ReactElement => {
     // const [ highlyActive, setHighlyActive ] = useState( false );

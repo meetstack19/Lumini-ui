@@ -3,15 +3,15 @@ import * as React from 'react';
 
 import {
   type ColumnDef,
-  flexRender,
-  type SortingState,
   type ColumnFiltersState,
-  type VisibilityState,
+  flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  type SortingState,
   useReactTable,
+  type VisibilityState,
 } from '@tanstack/react-table';
 
 import {
@@ -30,9 +30,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-import { DataTablePagination } from './data-table-pagination';
 import { Input } from '@/components/ui/input';
 import { Button } from '../button';
+import { DataTablePagination } from './data-table-pagination';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -55,6 +55,11 @@ export function DataTable<TData, TValue>({
   const table = useReactTable({
     data,
     columns,
+    initialState: {
+      pagination: {
+        pageSize: 5,
+      },
+    },
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -76,10 +81,10 @@ export function DataTable<TData, TValue>({
       <div className="flex items-center justify-between">
         <div className="flex items-center py-4">
           <Input
-            placeholder="Filter ..."
-            value={(table.getColumn('email')?.getFilterValue() as string) ?? ''}
+            placeholder="Filter User Name..."
+            value={(table.getColumn('userName')?.getFilterValue() as string) ?? ''}
             onChange={(event) =>
-              table.getColumn('email')?.setFilterValue(event.target.value)
+              table.getColumn('userName')?.setFilterValue(event.target.value)
             }
             className="max-w-sm"
           />

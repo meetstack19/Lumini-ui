@@ -81,6 +81,12 @@ body {
       height: 400px;
       margin-top: 20px;
     }
+    .container--graph {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 .dashboard-extension-container{
